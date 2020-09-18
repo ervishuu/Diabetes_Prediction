@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Home page
+{% endblock %}
+
+{% block body %}
+
+<br>
+  <center>{% if data:%}
+  <h4 style="color:{{data[1]}}">
+    {{data[0]}}
+  </h4>
+  {% endif %}
+  </center>
+<br>
+<form class="myform" action="/predict" method="POST">
+  <h6> Enter Glucose:</h6>
+  <input name="Glucose" type="number" step="any" min="10" max="300">
+  <h6>Enter BloodPressure:</h6>
+  <input name="BloodPressure" type="number" step="any" min="10" max="180" >
+  <h6>Enter SkinThickness:</h6>
+  <input name="SkinThickness" type="number" step="any" min="0" max="80">
+  <h6>Enter Insulin:</h6>
+  <input name="Insulin" type="number" step="any" min="0" max="1000">
+    <h6>Enter BMI :</h6>
+  <input name="BMI" type="number" step="any" min="5" max="80">
+  <h6>Enter DiabetesPedigreeFunction :</h6>
+  <input name="DiabetesPedigreeFunction" type="number" step="any" min="0" max="2">
+    <h6>Enter Age :</h6>
+  <input name="Age" type="number" step="any" min="10" max="150" >
+
+
+  <button class="btn" type="submit">Submit</button>
+
+</form>
+
+<br>
+<center>
+    <p style="font-size:13px;"> Designed By </p>
+</center>
+
+<center>
+    <p style="font-size:16px;">  2020&#10084;&#65039; @er_vishuu_vi__jaya </p>
+</center>
+
+  {% endblock %}
